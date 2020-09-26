@@ -1778,6 +1778,7 @@ int join_multicast_group_on_all_ifaces(
 	const struct ifaddrs *cursor = addrs;
 	int joined_count = 0;
 	while ( cursor != NULL ) {
+		if ( cursor->ifa_addr == 0) continue;
 		if ( cursor->ifa_addr->sa_family == AF_INET
 			&& !(cursor->ifa_flags & IFF_LOOPBACK)
 			&& !(cursor->ifa_flags & IFF_POINTOPOINT)
