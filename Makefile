@@ -41,6 +41,7 @@ CFLAGS += \
 	-Wunused-parameter \
 	-DNS_ENABLE_IPV6 \
 	-Wsign-compare \
+	-Wno-format-truncation \
 	-Werror \
 	-Wno-unknown-pragmas
 
