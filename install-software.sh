@@ -9,23 +9,21 @@ fi
 echo "Making ledscape..."
 make
 
-if [[ ! -f "/boot/dtbs/$(uname -r)/am335x-boneblack.dtb" ]]; then
+# if [[ ! -f "/boot/dtbs/$(uname -r)/am335x-boneblack.dtb" ]]; then
 
-	echo "Could not find "/boot/dtbs/$(uname -r)/am335x-boneblack.dtb". Only works with the Wheezy version of Debian."
-	exit -1
+# 	echo "Could not find "/boot/dtbs/$(uname -r)/am335x-boneblack.dtb". Only works with the Wheezy version of Debian."
+# 	exit -1
 
-fi
+# fi
 
+# echo "Making backups of old device tree files..."
+# mkdir /boot/dtbs/$(uname -r)/ledscape.bak
+# cp /boot/dtbs/$(uname -r)/am335x-boneblack.dtb{,.preledscape_bk}    
+# cp /boot/dtbs/$(uname -r)/am335x-bonegreen.dtb{,.preledscape_bk}    
 
-
-echo "Making backups of old device tree files..."
-mkdir /boot/dtbs/$(uname -r)/ledscape.bak
-cp /boot/dtbs/$(uname -r)/am335x-boneblack.dtb{,.preledscape_bk}    
-cp /boot/dtbs/$(uname -r)/am335x-bonegreen.dtb{,.preledscape_bk}    
-
-echo "Copying new device tree files..."		
-cp devicetree/am335x-boneblack.dtb /boot/dtbs/$(uname -r)/ 
-cp devicetree/am335x-bonegreen.dtb /boot/dtbs/$(uname -r)/ 
+# echo "Copying new device tree files..."		
+# cp devicetree/am335x-boneblack.dtb /boot/dtbs/$(uname -r)/ 
+# cp devicetree/am335x-bonegreen.dtb /boot/dtbs/$(uname -r)/ 
 
 echo Copying config file to /etc
 

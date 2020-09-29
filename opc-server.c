@@ -1379,11 +1379,11 @@ void* render_thread(void* unused_data)
                 // artifacts) we only force frame rotation if the next frame is really late.
                 if (has_next_frame && frame_progress_us > last_frame_time_us*2) {
                     // If we have more data, rotate it in.
-                    printf("Need data: rotating in; frame_progress_us=%llu; last_frame_time_us=%llu\n", frame_progress_us, last_frame_time_us);
+                    //printf("Need data: rotating in; frame_progress_us=%llu; last_frame_time_us=%llu\n", frame_progress_us, last_frame_time_us);
                     rotate_frames(TRUE);
                 } else {
                     // Otherwise sleep for a moment and wait for more data
-                    printf("Need data: none available; frame_progress_us=%llu; last_frame_time_us=%llu\n", frame_progress_us, last_frame_time_us);
+                    //printf("Need data: none available; frame_progress_us=%llu; last_frame_time_us=%llu\n", frame_progress_us, last_frame_time_us);
                     usleep(1e3);
                 }
 
