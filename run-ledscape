@@ -6,6 +6,11 @@ cd "$DIRNAME"
 # it's REALLY important that SSHd be running, since you have no other easy option to connect.
 # (sleep 30; /usr/bin/sshd -f /etc/ssh/sshd_config) &
 
+echo 'out' > /sys/class/gpio/gpio26/direction
+echo 'out' > /sys/class/gpio/gpio44/direction
+echo 'out' > /sys/class/gpio/gpio68/direction
+echo 'out' > /sys/class/gpio/gpio67/direction
+
 modprobe uio_pruss
 #./opc-server -P 7890 -s 48 -c 64
 ./opc-server --config /etc/ledscape-config.json
